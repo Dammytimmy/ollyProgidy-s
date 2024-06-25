@@ -872,7 +872,7 @@ body{
             transition: 0.3s;
         }
 
-        .cart.active{
+        .shoppingCart.active{
           right: 0;
         }
 
