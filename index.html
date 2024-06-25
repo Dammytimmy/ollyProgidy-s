@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="puma.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="pumacalcs.js">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -91,6 +92,35 @@
             <img src="whitesearch.svg" alt="search" class="search-icon">
             <img src="whiteheart.png" alt="like" class="loved">
             <img src="shoppingCart.png" alt="cart" class="shoppingCart" id="important">
+               
+            <!--Cart function-->
+              <div class="fsCart">
+                   <h2 class="cart-title">Your Cart</h2>
+                      <!--Content-->
+                      <div class="cart-content">
+
+                        <div class="cart-box">
+                            <img src="ps4Sneakers.jfif" alt="" class="cart-img">
+                            <div class="detail-box">
+                              <div class="cart-product-title">PUMA X PLAYSTATION Suede Sneakers</div>
+                              <div class="cart-price">₦243,600</div>
+                              <input type="number" value="1" class="cart-quantity">
+                            </div>
+                            <!--Remove Cart-->
+                            <i class='bx bxs-trash-alt cart-remove'></i>
+                        </div>
+                      </div>
+                      <!--Total-->
+                      <div class="total">
+                            <div class="total-title">Total</div>
+                            <div class="total-price">₦0</div>
+                      </div>
+                      <!--Buy Button-->
+                       <button type="button" class="btn-buy">Buy Now</button>
+                         <!--Cart Close-->
+                         <i class='bx bx-x' id="close-cart"></i>
+              </div>
+
             <img src="hamburgerMenu.svg" alt="hamburgerMenu" class="menu">
         </span>
     </nav>
@@ -118,44 +148,44 @@
                   
                   <div class="Sneakers" id="product-1">
                     <img src="ps4Sneakers.jfif" alt="ps4shoe" class="ps4White">
-                    <p>PUMA X PLAYSTATION Suede Sneakers</p>
-                    <p>₦243,600</p>
+                    <p class="product-title">PUMA X PLAYSTATION Suede Sneakers</p>
+                    <p class="price">₦243,600</p>
                   </div>
 
                   <div class="Sneakers" id="product-2">
                     <img src="bigblackbluePs4sneakers.jfif" alt="blackJumpers" class="ps4White">
-                    <p>PUMA X PLAYSTATION RS-X Sneakers</p>
-                    <p>₦265,800</p>
+                    <p class="product-title">PUMA X PLAYSTATION RS-X Sneakers</p>
+                    <p class="price">₦265,800</p>
                   </div>
 
                   <div class="Sneakers" id="product-3">
                     <img src="ps4Teeshirt.jfif" alt="ps4xteeshirt" class="ps4White">
-                    <p>PUMA X PLAYSTATION Tee</p>
-                    <p>₦88,600</p>
+                    <p class="product-title">PUMA X PLAYSTATION Tee</p>
+                    <p class="price">₦88,600</p>
                   </div>
 
                   <div class="Sneakers" id="product-4">
                     <img src="hoodieGrid.jfif" alt="ps4Hoodie" class="ps4White">
-                    <p>PUMA X PLAYSTATION Tee</p>
-                    <p>₦88,600</p>
+                    <p class="product-title">PUMA X PLAYSTATION Tee</p>
+                    <p class="price">₦88,600</p>
                   </div>
 
                   <div class="Sneakers" id="product-5">
                     <img src="pinkteeshirt.jfif" alt="ps4pink" class="ps4White">
-                    <p>PUMA X PLAYSTATION Tee</p>
-                    <p>₦99,700</p>
+                    <p class="product-title">PUMA X PLAYSTATION Tee</p>
+                    <p class="price">₦99,700</p>
                   </div>
 
                   <div class="Sneakers" id="product-6">
                     <img src="ps4pumatracksuit.jfif" alt="ps4tracksuit" class="ps4White">
-                    <p>PUMA X PLAYSTATION Jacket</p>
-                    <p>₦210,400</p>
+                    <p class="product-title">PUMA X PLAYSTATION Jacket</p>
+                    <p class="price">₦210,400</p>
                   </div>
  
                   <div class="Sneakers" id="product-7">
                     <img src="ps4blackShorts.jfif" alt="shorts" class="ps4White">
-                    <p>PUMA X PLAYSTATION Shorts</p>
-                    <p>₦132,900</p>
+                    <p class="product-title">PUMA X PLAYSTATION Shorts</p>
+                    <p class="price">₦132,900</p>
                   </div>
            </div>
 
@@ -255,88 +285,88 @@
                   
               <div class="Sneakers" id="product-a">
                 <img src="whiteSneakers.jfif" alt="ps4shoe" class="ps4White">
-                <p>Mayze Classic Women's Sneakers</p>
-                <span style="color: red;">₦195,200</span>
+                <p class="product-title">Mayze Classic Women's Sneakers</p>
+                <span style="color: red;" class="price">₦195,200</span>
                 <br>
                 <del>₦244,000</del>
               </div>
 
               <div class="Sneakers" id="product-b">
                 <img src="bigblackbluePs4sneakers.jfif" alt="blackJumpers" class="ps4White">
-                <p>PUMA X PLAYSTATION RS-X Sneakers</p>
-                <p>₦265,800</p>
+                <p class="product-title">PUMA X PLAYSTATION RS-X Sneakers</p>
+                <p class="price">₦265,800</p>
               </div>
 
               <div class="Sneakers" id="product-c">
                 <img src="colorfulJacket.jfif" alt="ps4xteeshirt" class="ps4White">
-                <p>Puma Rainbow Jacket</p>
-                <span style="color: red;">₦90,000</span>
+                <p class="product-title">Puma Rainbow Jacket</p>
+                <span style="color: red;" class="price">₦90,000</span>
                 <br>
                 <del>₦110,400</del>
               </div>
 
               <div class="Sneakers" id="product-d">
                 <img src="mercedesShoe.jfif" alt="ps4Hoodie" class="ps4White">
-                <p>Ultimate AG/FG Football Slides</p>
-                <p>₦88,600</p>
+                <p class="product-title">Ultimate AG/FG Football Slides</p>
+                <p class="price">₦88,600</p>
               </div>
 
               <div class="Sneakers" id="product-e">
                 <img src="pumaSoccerBoots.jfif" alt="ps4pink" class="ps4White">
-                <p>Bluey-striped GA/FG Soccer Boots</p>
-                <p>₦99,700</p>
+                <p class="product-title">Bluey-striped GA/FG Soccer Boots</p>
+                <p class="price">₦99,700</p>
               </div>
 
               <div class="Sneakers" id="product-f">
                 <img src="jumperSneakers.jfif" alt="ps4tracksuit" class="ps4White">
-                <p>Karmen Rebelle Sneakers Women</p>
-                <span style="color: red;">₦168,600</span>
+                <p class="product-title">Karmen Rebelle Sneakers Women</p>
+                <span style="color: red;" class="price">₦168,600</span>
                 <br>
                 <del>₦244,00</del>
               </div>
 
               <div class="Sneakers" id="product-g">
                 <img src="metallicJacket.jfif" alt="shorts" class="ps4White">
-                <p>Puma Special Silver Jacket</p>
-                <span style="color: red;">₦124,200</span>
+                <p class="product-title">Puma Special Silver Jacket</p>
+                <span style="color: red;" class="price">₦124,200</span>
                 <br>
                 <del>₦177,400</del>
               </div>
 
               <div class="Sneakers" id="product-h">
                 <img src="grey-blackthiclineCanvas.jfif" alt="shorts" class="ps4White">
-                <p>Mayze Women's Trainers</p>
-                <span style="color: red;">₦195,200</span>
+                <p class="product-title">Mayze Women's Trainers</p>
+                <span style="color: red;" class="price">₦195,200</span>
                 <br>
                 <del>₦244,400</del>
               </div>
 
               <div class="Sneakers" id="product-i">
                 <img src="blackPuma.jfif" alt="shorts" class="ps4White">
-                <p>Leather Black Jumpers</p>
-                <span style="color: red;">₦113,100</span>
+                <p class="product-title">Leather Black Jumpers</p>
+                <span style="color: red;" class="price">₦113,100</span>
                 <br>
                 <del>₦133,100</del>
               </div>
 
               <div class="Sneakers" id="product-j">
                 <img src="greenishBrown.jfif" alt="shorts" class="ps4White">
-                <p>Fenty Puma Trainers</p>
-                <span style="color: red;">₦82,100</span>
+                <p class="product-title">Fenty Puma Trainers</p>
+                <span style="color: red;" class="price">₦82,100</span>
                 <br>
                 <del>₦166,400</del>
               </div>
 
               <div class="Sneakers" id="product-k">
                 <img src="classicwhitesignshoe.jfif" alt="shorts" class="ps4White">
-                <p>Mayze Stack Women Trainers</p>
-                <p>₦132,900</p>
+                <p class="product-title">Mayze Stack Women Trainers</p>
+                <p class="price">₦132,900</p>
               </div>
 
               <div class="Sneakers" id="product-l">
                 <img src="brownblackSneakers.jfif" alt="shorts" class="ps4White">
-                <p>X-Palermo Max Sneakers</p>
-                <span style="color: red;">₦140,500</span>
+                <p class="product-title">X-Palermo Max Sneakers</p>
+                <span style="color: red;" class="price">₦140,500</span>
                 <br>
                 <del>₦175,600</del>
               </div>
