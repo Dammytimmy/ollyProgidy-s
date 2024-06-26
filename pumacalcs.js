@@ -4,9 +4,14 @@ let cart = document.querySelector('.fsCart');
 let closeCart = document.querySelector('#close-cart');
 
 //Open Cart
-cartIcon.onclick = () => {
-    cart.classList.add("active");
-};
+// cartIcon.onclick = () => {
+//     cart.classList.add("active");
+// };
+console.log(typeof(cart));
+cartIcon.addEventListener("click", function(){
+  cart.classList.add('active');
+}
+); 
 
  // Close Cart
 closeCart.onclick = () => {
@@ -38,7 +43,7 @@ closeCart.onclick = () => {
     }
     
     //Add to cart 
-   var addCart = document.getElementsByClassName("ps4White");
+   var addCart = document.getElementsByClassName("ps4White")[0];
    for (var i = 0; i < addCart.length; i++) {
        var button = addCart[i];
        button.addEventListener("click", addCartClicked);

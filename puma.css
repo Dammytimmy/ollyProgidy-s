@@ -861,22 +861,26 @@ body{
 
          /*cart part*/
         .fsCart{
-            position: relative;
-            top: 0;
-            right: 100%; /*-100%*/
+            position:absolute;
+            top: 90%;
+            left: 70%;
+             /*-100%*/
+             display: none;
             width: 360px;
-            min-height: 100vh;
+            max-height: 100vh;
             padding: 20px;
             background: whitesmoke;
             box-shadow: -2px 0 4px hsl(0 4% 15% / 10%);
             transition: 0.3s;
         }
 
-        .shoppingCart.active{
-          right: 0;
+        .fsCart.active{
+         display: block;
+          
         }
 
         .cart-title{
+          color: #181818;
           text-align: center;
           font-size: 1.5rem;
           font-weight: 600;
@@ -886,6 +890,7 @@ body{
         .cart-box{
           display: grid;
           grid-template-columns: 32% 50% 18%;
+          color: #181818;
           align-items: center;
           gap: 1rem;
           margin-top: 1rem;
