@@ -861,9 +861,9 @@ body{
 
          /*cart part*/
         .fsCart{
-            position: fixed;
+            position: relative;
             top: 0;
-            right: -100%; /*-100%*/
+            right: 100%; /*-100%*/
             width: 360px;
             min-height: 100vh;
             padding: 20px;
