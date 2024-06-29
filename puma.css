@@ -12,6 +12,10 @@
 body{
   margin: 0;
 }
+
+li {
+  list-style: none;
+}
   :root{
       --bgnav: black;
       --fontwhite: white;
@@ -28,7 +32,7 @@ body{
       box-sizing: border-box;
       position: relative;
       width: 100%;
-      max-height: 80px;
+      height: fit-content;
       position: fixed;
       top: 0;
       z-index: 999;  
@@ -50,44 +54,63 @@ body{
                   .tabs {
                     order: 2;
                     display: flex;
+                    border: 1px solid transparent;
                     align-items: center;
+                    padding-top: 10px;
                     gap: 20px;
-                    height: 40px;
-                    padding: 10px;
-                    margin-right: 90px; 
-                    position: relative;               
+                    height: fit-content;
+                    margin-right: 90px;
+                    
                 }
                 
                 .droppy {
-                  display: none;
-                  position: absolute;
-                  top: 60px;
-                  color: black;
-                  box-sizing: border-box;
-                  background-color: #f1f1f1;
-                  width: 100vw;
-                  z-index: 1;
-              }
-              
-              .com {
-                  text-decoration: none;
-                  font-weight: 500;
-                  color: #fff;
-                  border: 1px solid transparent;
-                  transition: all 0.3s ease;
-              }
-              
-              .com:hover {
-                  text-decoration: underline;
-              }
-              
-              /* Ensure that .droppy is shown when .com is hovered */
-              .com:hover + .droppy {
-                  display: flex;
-                  flex-direction: row;
-              }
-              
-            
+                    display: none;
+                    position: absolute;
+                    top: 65px;
+                    color: black;
+                    box-sizing: border-box;
+                    background-color: #f1f1f1;
+                    width: 65vw;
+                    z-index: 1;
+                    box-shadow: 3px 5px 13px rgba(0, 0, 0, 0.116);
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    
+                }
+                
+                .droppy ul {
+                    list-style: none;
+                    padding: 10px;
+                    margin: 0;
+                    min-width: 180px;
+                }
+                
+                .com {
+                    text-decoration: none;
+                    font-weight: 500;
+                    color: #fff;
+                    border: 1px solid transparent;
+                    padding-top: 10px;
+                    transition: all 0.3s ease;
+                    padding-bottom: 20px;
+                }
+                
+                .com:hover {
+                    text-decoration: underline;
+                 }
+                
+                /* Ensure that .droppy is shown when .com is hovered */
+                .tabs > .com:hover + .droppy {
+                    display: flex;
+                    
+                }
+                
+                /* Ensure that .droppy is shown when .droppy is hovered */
+                .tabs > .droppy:hover {
+                    display: flex;
+                  
+                }
+                
 
                   
 
@@ -140,7 +163,7 @@ body{
           color: var(--fontwhite);
           font-size: 20px;
           font-weight: 500;
-          margin-top: 60.2px;
+          margin-top: 58px;
           position: relative;
           z-index: -1;
       }
@@ -229,10 +252,12 @@ body{
   display: block;
 }
         */
-      .shoe-products{
+        .shoe-products{
           display: flex;
           flex-direction: row;
           align-items: center;
+          flex-wrap: nowrap;
+          overflow-x: hidden;
           margin-top: 10px;
           /* justify-content: flex-start; */
           border: 1px solid transparent;
@@ -862,16 +887,20 @@ body{
          /*cart part*/
         .fsCart{
             position:absolute;
-            top: 90%;
-            left: 70%;
+            top: 100%;
+            left: 72%;
              /*-100%*/
              display: none;
+             border:1px solid #181818;
             width: 360px;
             max-height: 100vh;
             padding: 20px;
+            box-sizing: border-box;
             background: whitesmoke;
             box-shadow: -2px 0 4px hsl(0 4% 15% / 10%);
             transition: 0.3s;
+            overflow-y: scroll;
+            overflow-x: hidden;
         }
 
         .fsCart.active{
@@ -927,7 +956,7 @@ body{
 
         .cart-remove {
           font-size: 24px;
-          color: orangered;
+          color: blue;
           cursor: pointer;
         }
 
@@ -941,16 +970,19 @@ body{
         .total-title{
           font-size: 1rem;
           font-weight: 600;
+          color: #181818;
         }
 
         .total-price {
           margin-left: 0.5rem;
+          color: #181818;
         }
 
         .btn-buy{
-          display: flex;
-          margin: 1.5rem auto 0 auto;
           padding: 12px 20px;
+          margin-left: 100px;
+          margin-top: 20px;
+          margin-bottom: 60px;
           border: none;
           background: orangered;
           color: white;
@@ -1670,5 +1702,13 @@ body{
 
 
           }
+
+          .fsCart{
+            display: none;
+          }
+    }
+
+    @media screen and (max-width: 383px) {
+       
     }
         
