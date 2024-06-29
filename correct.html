@@ -545,7 +545,7 @@
           </div>
 
           <!--Products 1(shoes)-->
-           <div class="shoe-products">
+           <div class="shoe-products" id="shoeProducts">
                   
                   <div class="Sneakers" id="product-1">
                     <img src="ps4Sneakers.jfif" alt="ps4shoe" class="ps4White">
@@ -682,7 +682,7 @@
             BEST SELLERS YOU MAY LIKE
            <P>
 
-            <div class="shoe-products">
+            <div class="shoe-products" id="shoeProducts">
                   
               <div class="Sneakers" id="product-a">
                 <img src="whiteSneakers.jfif" alt="ps4shoe" class="ps4White">
@@ -907,52 +907,77 @@ for (i = 0; i < acc.length; i++) {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-  
-// Get the container and calculate total width of child items
-const container = document.getElementById('shoeProducts');
-const items = container.querySelectorAll('.Sneakers');
-let totalWidth = 0;
+    // Get the container
+    const container = document.getElementById('shoeProducts');
 
-items.forEach(item => {
-    totalWidth += item.offsetWidth; // Add up the width of each item
+    // Check if the container exists
+    if (!container) {
+        console.error("Element with ID 'shoeProducts' not found.");
+        return;
+    }
+
+    // Function to calculate the total width of child items
+    function calculateTotalWidth() {
+        const items = container.getElementsByClassName('Sneakers');
+        let totalWidth = 0;
+        Array.from(items).forEach(item => {
+            totalWidth += item.offsetWidth;
+        });
+        return totalWidth;
+    }
+
+    // Function to load more content
+    function loadMoreContent() {
+        // Simulate loading more content
+        for (let i = 0; i < 3; i++) {
+            const newItem = document.createElement('div');
+            newItem.className = 'Sneakers';
+            newItem.textContent = 'Shoe ' + (container.children.length + 1);
+            container.appendChild(newItem);
+        }
+        
+        // Update container width to fit all items
+        container.style.width = calculateTotalWidth() + 'px';
+    }
+
+    // Function to check scroll position and load more content
+    function checkScroll() {
+        if (container.scrollLeft + container.clientWidth >= container.scrollWidth) {
+            loadMoreContent();
+        }
+    }
+
+    // Auto-scroll function
+    function autoScroll() {
+        console.log('Auto-scroll function started'); // Check if function is called
+        let scrollAmount = 1; // Adjust speed of scrolling here
+        const scrollInterval = setInterval(function() {
+            container.scrollLeft += scrollAmount;
+            console.log('Scroll amount:', container.scrollLeft); // Check scrollLeft value
+            if (container.scrollLeft >= (container.scrollWidth - container.clientWidth)) {
+                clearInterval(scrollInterval); // Stop scrolling when end is reached
+                console.log('Scrolling stopped'); // Check if clearInterval is triggered
+                loadMoreContent(); // Optionally load more content when end is reached
+            }
+        }, 20); // Adjust interval for smoothness
+    }
+
+    // Initial content load and setup
+    loadMoreContent(); // Load initial content
+    container.style.width = calculateTotalWidth() + 'px'; // Set initial width
+
+    // Call autoScroll function
+    autoScroll();
+
+    // Event listener for scroll event
+    container.addEventListener('scroll', checkScroll);
+
+    // Log container, items, and totalWidth for debugging
+    console.log("Container:", container);
+    console.log("Items:", Array.from(container.getElementsByClassName('Sneakers'))); // Convert HTMLCollection to Array for better logging
+    console.log("Total Width:", calculateTotalWidth());
 });
 
-// Set the container width to fit all items without wrapping
-container.style.width = totalWidth + 'px';
-
-// Function to auto-scroll horizontally
-function autoScroll() {
-    let scrollAmount = 1; // Adjust speed of scrolling here
-    const scrollInterval = setInterval(function() {
-        container.scrollLeft += scrollAmount;
-        if (container.scrollLeft >= (container.scrollWidth - container.clientWidth)) {
-            clearInterval(scrollInterval); // Stop scrolling when end is reached
-        }
-    }, 20); // Adjust interval for smoothness
-}
-
-// Start the auto-scrolling
-autoScroll();
-});
-
-function autoScroll() {
-    console.log('Auto-scroll function started'); // Check if function is called
-    let scrollAmount = 1; // Adjust speed of scrolling here
-    const scrollInterval = setInterval(function() {
-        container.scrollLeft += scrollAmount;
-        console.log('Scroll amount:', container.scrollLeft); // Check scrollLeft value
-        if (container.scrollLeft >= (container.scrollWidth - container.clientWidth)) {
-            clearInterval(scrollInterval); // Stop scrolling when end is reached
-            console.log('Scrolling stopped'); // Check if clearInterval is triggered
-        }
-    }, 20); // Adjust interval for smoothness
-}
-
-
-
-console.log("Container:", container);
-console.log("Items:", items);
-console.log("Total Width:", totalWidth);
 
         </script>
         
