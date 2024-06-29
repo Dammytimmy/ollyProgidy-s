@@ -82,7 +82,7 @@ function quantityChanged(event) {
         input.value = 1;
     }
     updateTotal();
-    /
+
 }
 
 // Add to cart
