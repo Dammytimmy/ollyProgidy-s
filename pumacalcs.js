@@ -1,31 +1,37 @@
-
+//note every component e.g CART OR DELETE BUTTON HAS ITS UNIQUE ID OR CLASS CREATE YOURS
 
 // Cart
 let cartIcon = document.querySelector('#important');
+// cart icon 
 let cart = document.querySelector('.fsCart');
+// div cart
 let closeCart = document.querySelector('#close-cart');
+// x for close ICON
 
 // Open Cart
 cartIcon.addEventListener("click", function() {
     cart.classList.add('active');
-});
+}); // WHEN I TAP ON THE CART ICON, THIS CAUSES IT SHOW
 
 // Close Cart
 closeCart.onclick = () => {
     cart.classList.remove("active");
 };
-
+//WHEN I TAP ON MY X(CLOSE), THIS CAUSES IT NOT TO SHOW
+  
 // Cart working JS
 if (document.readyState === 'loading') {
     document.addEventListener("DOMContentLoaded", ready);
 } else {
     ready();
-}
+}     // Checking the page loads first to stamp DOM rules
 
 // Making Function
+
 function ready() {
     // Remove Items from Cart
     var removeCartButtons = document.getElementsByClassName('cart-remove');
+    //the delete button function
     for (var i = 0; i < removeCartButtons.length; i++) {
         var button = removeCartButtons[i];
         button.addEventListener('click', retractCartButtons);
@@ -33,12 +39,14 @@ function ready() {
 
     // Quantity Changes
     var quantityInputs = document.getElementsByClassName('cart-quantity');
+     //for the no of products you want to buy
     for (var i = 0; i < quantityInputs.length; i++) {
         var input = quantityInputs[i];
         input.addEventListener("change", quantityChanged);
     }
 
     // Add to cart
+       //when you click on the image of the products it adds
     var addCartButtons = document.getElementsByClassName("ps4White");
     for (var i = 0; i < addCartButtons.length; i++) {
         var button = addCartButtons[i];
@@ -47,6 +55,7 @@ function ready() {
 
     // Buy Button Work
     document.getElementsByClassName('btn-buy')[0].addEventListener("click", buyButtonClicked);
+    //event for when you click the the puchase button
 }
 
 // Buy BUTTON 
@@ -58,10 +67,11 @@ function buyButtonClicked() {
     }
     updateTotal();
 }
-
+  // how the buy button works , the updatetotal happens all around when things that will affect the total price
 function retractCartButtons(event) {
     var buttonClicked = event.target;
     buttonClicked.parentElement.remove();
+    // when you remove the products from cart, it is affecting total
     updateTotal();
 }
 
@@ -72,6 +82,7 @@ function quantityChanged(event) {
         input.value = 1;
     }
     updateTotal();
+    /
 }
 
 // Add to cart
@@ -86,6 +97,7 @@ function addCartClicked(event) {
 }
 
 function addProductToCart(title, price, productImg) {
+      // all the characteristics of the products elements  
     var cartShopBox = document.createElement('div');
     cartShopBox.classList.add('cart-box');
     var cartItems = document.getElementsByClassName('cart-content')[0];
@@ -107,6 +119,7 @@ function addProductToCart(title, price, productImg) {
         </div>
         <i class='bx bxs-trash-alt cart-remove'></i>
     `;
+    // applied the innerhtml to link with the function 
     cartShopBox.innerHTML = cartBoxContent;
     cartItems.append(cartShopBox);
     cartShopBox.getElementsByClassName('cart-remove')[0].addEventListener('click', retractCartButtons);
