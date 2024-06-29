@@ -70,21 +70,40 @@ li {
                     color: black;
                     box-sizing: border-box;
                     background-color: #f1f1f1;
-                    width: 65vw;
+                    width: 77vw;
                     z-index: 1;
                     box-shadow: 3px 5px 13px rgba(0, 0, 0, 0.116);
                     flex-direction: row;
-                    flex-wrap: wrap;
-                    
+                    flex-wrap: nowrap;
                 }
                 
                 .droppy ul {
+                  box-sizing: border-box;
                     list-style: none;
                     padding: 10px;
                     margin: 0;
                     min-width: 180px;
+                    margin-bottom: 20px;
                 }
                 
+                .reddy{
+                  color: red;
+                  font-weight: 800;
+                }
+
+                .lead{
+                  text-decoration: underline;
+                  font-weight: 800;
+                }
+
+                .droppy li{
+                   padding-bottom: 10px;
+                   cursor: pointer;
+                }
+
+                .droppy li:hover {
+                  color: goldenrod;
+                }
                 .com {
                     text-decoration: none;
                     font-weight: 500;
@@ -102,13 +121,12 @@ li {
                 /* Ensure that .droppy is shown when .com is hovered */
                 .tabs > .com:hover + .droppy {
                     display: flex;
-                    
+                     transition: 5s ease-out;
                 }
                 
                 /* Ensure that .droppy is shown when .droppy is hovered */
                 .tabs > .droppy:hover {
                     display: flex;
-                  
                 }
                 
 
